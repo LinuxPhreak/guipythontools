@@ -18,6 +18,13 @@ class compiler(Ui_MainWindow):
 
 		if (srcFile != '' and destFile != ''):
 			subprocess.run(["/usr/bin/pyuic5", "-x", srcFile, "-o", destFile])
+			msg = QtWidgets.QMessageBox()
+			msg.setIcon(QtWidgets.QMessageBox.Warning)
+
+			msg.setText("PyQt5 file has been generated at "+destFile)
+			msg.setWindowTitle("File Created Successfully")
+			msg.setStandardButtons(QtWidgets.QMessageBox.Ok)
+			msg.exec_()
 		else:
 			msg = QtWidgets.QMessageBox()
 			msg.setIcon(QtWidgets.QMessageBox.Warning)
