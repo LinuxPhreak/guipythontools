@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import sys
 import os
+import platform
 import subprocess
 from PyQt5 import QtCore, QtGui, QtWidgets
 from compiler import Ui_MainWindow
@@ -17,7 +18,8 @@ class compiler(Ui_MainWindow):
 		destFile = self.txtDestination.text()
 
 		if (srcFile != '' and destFile != ''):
-			subprocess.run(["/usr/bin/pyuic5", "-x", srcFile, "-o", destFile])
+			if (platform.system() == 'Linux'): # Attempt to make cross platform in one script
+				subprocess.run(["/usr/bin/pyuic5", "-x", srcFile, "-o", destFile])
 			msg = QtWidgets.QMessageBox()
 			msg.setIcon(QtWidgets.QMessageBox.Warning)
 
