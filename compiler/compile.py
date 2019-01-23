@@ -15,8 +15,8 @@ class compiler(Ui_MainWindow):
 	def mkGui(self):
 		srcFile = self.txtSource.text()
 		destFile = self.txtDestination.text()
-
-		subprocess.run(["/usr/bin/pyuic5", "-x", srcFile, "-o", destFile])
+		if (srcFile != '' and destFile != ''):
+			subprocess.run(["/usr/bin/pyuic5", "-x", srcFile, "-o", destFile])
 		
  
 if __name__ == '__main__':
