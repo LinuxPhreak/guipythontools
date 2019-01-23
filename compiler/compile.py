@@ -15,9 +15,17 @@ class compiler(Ui_MainWindow):
 	def mkGui(self):
 		srcFile = self.txtSource.text()
 		destFile = self.txtDestination.text()
+
 		if (srcFile != '' and destFile != ''):
 			subprocess.run(["/usr/bin/pyuic5", "-x", srcFile, "-o", destFile])
-		
+		else:
+			msg = QtWidgets.QMessageBox()
+			msg.setIcon(QtWidgets.QMessageBox.Warning)
+
+			msg.setText("You must enter paths to for the files")
+			msg.setWindowTitle("Empty file paths")
+			msg.setStandardButtons(QtWidgets.QMessageBox.Ok)
+			msg.exec_()
  
 if __name__ == '__main__':
     app = QtWidgets.QApplication(sys.argv)
