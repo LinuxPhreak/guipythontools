@@ -19,10 +19,10 @@ class compiler(Ui_MainWindow):
 
 		if (srcFile != '' and destFile != ''):
 			if (platform.system() == 'Linux'): # Attempt to make cross platform in one script
-				subprocess.run(["/usr/bin/pyuic5", "-x", srcFile, "-o", destFile])
+				subprocess.run(["pyuic5", "-x", srcFile, "-o", destFile])
 			elif (platform.system() == 'Windows'): # This is for Windows (Not yet tested)
 				programfiles = os.environ['SYSTEMDRIVE']
-				subprocess.run([programfiles, "Python37\Scripts\pyuic5.exe", "-x", srcFile, "-o", destFile])
+				subprocess.run([programfiles, "pyuic5.exe", "-x", srcFile, "-o", destFile])
 			msg = QtWidgets.QMessageBox()
 			msg.setIcon(QtWidgets.QMessageBox.Warning)
 

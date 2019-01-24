@@ -31,8 +31,8 @@ After you have downloaded the compressed zip file extract the contents to `guipy
 ## Linux Installer
 To use the Linux installer simply type the following.
 
-`chmod +x linux-installer.sh`
+`sudo chmod +x linux-installer.sh`
 
-`sh ./linux-installer.sh`
+`sudo sh ./linux-installer.sh`
 
 If all goes well everything should be installed.
