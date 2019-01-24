@@ -1,0 +1,3 @@
+#!/usr/bin/env sh
+pip3 install --target compiler/lib/python3.7/site-packages/ PyQt5
+echo Everything installed okay....
