@@ -2,6 +2,8 @@
 
 GUI Python Tools is designed to offer GUI envirenments to some of the common Python tools. Such as `pyuic venv`
 
+![Program Running](images/program.png)
+
 To run you will need the python3 dependencies
 
 * python3.7
@@ -24,8 +26,6 @@ After you have downloaded the compressed zip file extract the contents to `guipy
 * PyQt5_sip-4.19.13.dist-info
 * setuptools
 * setuptools-40.4.3.dist-info
-
-![Program Running](images/program.png)
 
 
 ## Linux Installer
