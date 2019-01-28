@@ -1,0 +1,23 @@
+body
+{
+	background-color: #000000;
+	color: #ffffff;
+}
+#main
+{
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+#left
+{
+	float: left;
+	width: 70%;
+}
+#right
+{
+	float: left;
+	width: 18%;
+	text-align: left;
+}
