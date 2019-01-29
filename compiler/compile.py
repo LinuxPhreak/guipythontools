@@ -18,11 +18,8 @@ class compiler(Ui_MainWindow):
 		destFile = self.txtDestination.text()
 
 		if (srcFile != '' and destFile != ''):
-			if (platform.system() == 'Linux'): # Attempt to make cross platform in one script
-				subprocess.run(["pyuic5", "-x", srcFile, "-o", destFile])
-			elif (platform.system() == 'Windows'): # This is for Windows (Not yet tested)
-				programfiles = os.environ['SYSTEMDRIVE']
-				subprocess.run([programfiles, "pyuic5.exe", "-x", srcFile, "-o", destFile])
+			subprocess.run(["pyuic5", "-x", srcFile, "-o", destFile])
+			subprocess.run(["notify-send", '"GUI Python file created"', '"UI file: '+srcFile+'\n Py file: '+destFile+'"'])
 			msg = QtWidgets.QMessageBox()
 			msg.setIcon(QtWidgets.QMessageBox.Warning)
 
