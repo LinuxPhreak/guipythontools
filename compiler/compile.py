@@ -12,6 +12,7 @@ class compiler(Ui_MainWindow):
 		self.setupUi(MainWindow)
 
 		self.cbConvert.clicked.connect(self.mkGui)
+		self.cbCreate.clicked.connect(self.mkVenv)
 
 	def mkGui(self):
 		srcFile = self.txtSource.text()
@@ -35,6 +36,20 @@ class compiler(Ui_MainWindow):
 			msg.setWindowTitle("Empty file paths")
 			msg.setStandardButtons(QtWidgets.QMessageBox.Ok)
 			msg.exec_()
+
+	def mkVenv(self):
+		venvLoc = self.tbVenv_2.text()
+		if (venvLoc != ''):
+			subprocess.run(["python3","-m","venv",venvLoc])
+			msg = QtWidgets.QMessageBox()
+			msg.setIcon(QtWidgets.QMessageBox.Warning)
+
+			msg.setText("Virtual Envirenment Has Been Created "+venvLoc)
+			msg.setWindowTitle("Envirenment Successfully Created")
+			msg.setStandardButtons(QtWidgets.QMessageBox.Ok)
+			msg.exec_()
+
+
  
 if __name__ == '__main__':
     app = QtWidgets.QApplication(sys.argv)
