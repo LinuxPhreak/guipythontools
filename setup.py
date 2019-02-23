@@ -50,5 +50,5 @@ setup(
     python_requires='>=3.7.*',
     # For an analysis of "install_requires" vs pip's requirements files see:
     # https://packaging.python.org/en/latest/requirements.html
-    install_requires=['sys','os','platform','subprocess','PyQt5','compiler'],  # Optional
+    #install_requires=['sys','os','platform','subprocess','PyQt5'],  # Optional
 )
