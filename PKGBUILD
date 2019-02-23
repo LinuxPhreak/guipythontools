@@ -7,7 +7,7 @@ pkgdesc="GUI Tools for Python"
 arch=('any')
 url="https://linuxphreak.github.io/guipythontools"
 license=('GPL')
-depends=('python3' 'python-pyqt5')
+depends=('python3' 'python-pyqt5' 'notification-daemon' 'notify-osd')
 source=(git+https://github.com/LinuxPhreak/guipythontools)
 md5sums=('SKIP')
 
