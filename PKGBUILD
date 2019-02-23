@@ -2,7 +2,7 @@
 _pkgbasename=guipythontools
 pkgname=$_pkgbasename-git
 pkgrel=1
-pkgver=58db73aa4eec7f5914eaf774e82db5c134b30e63
+pkgver=1
 pkgdesc="GUI Tools for Python"
 arch=('any')
 url="https://linuxphreak.github.io/guipythontools"
@@ -13,7 +13,7 @@ md5sums=('SKIP')
 
 pkgver() {
     cd "$srcdir/$_pkgbasename"
-    git rev-parse HEAD | sed 's/\([^-]*-g\)/r\1/;s/-/./g'
+    git describe --long --tags | sed 's/\([^-]*-g\)/r\1/;s/-/./g'
 }
 
 build() {
@@ -30,7 +30,8 @@ package() {
     mkdir -p "$pkgdir/usr/bin"
 
     _python=$(ls "$pkgdir/usr/lib/")
-    mv $srcdir/$_pkgbasename/lib/$_python/site-packages/compile.py $pkgdir/usr/bin/compile.py
-    chmod +x "$pkgdir/usr/bin/compile.py"
+    cp $srcdir/$_pkgbasename/lib/$_python/site-packages/compile.py $pkgdir/usr/bin/compile
+    cp $srcdir/$_pkgbasename/lib/$_python/site-packages/compiler.py $pkgdir/usr/bin/compiler.py
+    chmod +x "$pkgdir/usr/bin/compile"
 
 }
