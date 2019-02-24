@@ -2,7 +2,7 @@
 _pkgbasename=guipythontools
 pkgname=$_pkgbasename-git
 pkgrel=1
-pkgver=1
+pkgver=v1.0
 pkgdesc="GUI Tools for Python"
 arch=('any')
 url="https://linuxphreak.github.io/guipythontools"
