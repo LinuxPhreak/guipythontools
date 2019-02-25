@@ -1,9 +1,9 @@
 [Desktop Entry]
 Type=Application
-Name[en]="GUI Python Tools"
+Name[en]=GUI Python Tools
 GenericName=Python Tools
 Icon=
 Categories=
-Exec=compile
+Exec=compile %U
 StartupNotify=true
 Terminal=false

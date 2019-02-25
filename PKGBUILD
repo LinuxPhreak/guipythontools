@@ -28,10 +28,13 @@ package() {
     tar -xC "$pkgdir/" -f "$srcdir/$_pkgbasename/dist/$_pkg"
 
     mkdir -p "$pkgdir/usr/bin"
+    mkdir -p "pkgdir/usr/share"
+    mkdir -p "pkgdir/usr/share/applications"
 
     _python=$(ls "$pkgdir/usr/lib/")
     cp $srcdir/$_pkgbasename/lib/$_python/site-packages/compile.py $pkgdir/usr/bin/compile
     cp $srcdir/$_pkgbasename/lib/$_python/site-packages/compiler.py $pkgdir/usr/bin/compiler.py
+    cp $srcdir/$_pkgbasename/guipythontools.desltop $pkgdir/usr/share/applications/guipythontools.desltop
     chmod +x "$pkgdir/usr/bin/compile"
 
 }
